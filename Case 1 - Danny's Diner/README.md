@@ -4,12 +4,13 @@
 
 Read the full case study [here](https://8weeksqlchallenge.com/case-study-1/)
 
-## Table of Contents
+## 📖 Table of Contents
 1. Brief
 2. Entity Relationship Diagram
 3. Case Study Questions
 
 ### 1. Brief
+Danny runs a small Japanese restaurant and wants to use the data to answer questions about his customers such as their visiting and speding patterns, their favorite menus, and questions regarding the customer loyalty program.
 
 ### 2. Entity Relationship Diagram
 ![image](https://user-images.githubusercontent.com/38837759/174418589-4c45c228-2116-478d-9250-ed95ac1331ef.png)
@@ -28,4 +29,4 @@ Read the full case study [here](https://8weeksqlchallenge.com/case-study-1/)
 
 ### View my [solutions](https://github.com/pinusa/8-Week-SQL-Challenge/blob/main/Case%201%20-%20Danny's%20Diner/case1_dannys_diner)
 
-Note: I did this exercise on DB Fiddle 
+Note: This exercise was done on DB Fiddle
