@@ -7,7 +7,7 @@ Link to the challenge:
 https://8weeksqlchallenge.com/
 
 ## Case Studies
-1. Danny's Diner
+1. [Danny's Diner](https://github.com/pinusa/8-Week-SQL-Challenge/tree/main/Case%201%20-%20Danny's%20Diner)
 2. Pizza Runner
 3. Foodie-Fi
 4. Data Bank
