@@ -13,7 +13,7 @@ Read the full case study [here](https://8weeksqlchallenge.com/case-study-1/)
 Danny runs a small Japanese restaurant and wants to use the data to answer questions about his customers such as their visiting and speding patterns, their favorite menus, and questions regarding the customer loyalty program.
 
 ### 2. Entity Relationship Diagram
-![image](https://user-images.githubusercontent.com/38837759/174418589-4c45c228-2116-478d-9250-ed95ac1331ef.png)
+![image](https://user-images.githubusercontent.com/81607668/127271130-dca9aedd-4ca9-4ed8-b6ec-1e1920dca4a8.png)
 
 ### 3. Case Study Questions
 1. What is the total amount each customer spent at the restaurant?
