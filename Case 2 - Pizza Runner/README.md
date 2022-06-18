@@ -1,6 +1,6 @@
 # Case Study 2 - Pizza Runner
 
-<img src = "![image](https://user-images.githubusercontent.com/38837759/174419281-2fc4e4d8-fab4-42d6-9537-0267a3b72962.png)" width="500" height="500">
+<img src = "https://8weeksqlchallenge.com/images/case-study-designs/2.png" width="500" height="500">
 
 Read the full case study [here](https://8weeksqlchallenge.com/case-study-2/)
 
