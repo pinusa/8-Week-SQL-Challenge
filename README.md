@@ -1,5 +1,5 @@
 # 🍕 8-Week-SQL-Challenge
-This repository is my solutions of of the #8WeekSQLChallenge by Danny Ma. <br/>
+This repository is my solutions of of the **[#8WeekSQLChallenge] by Danny Ma. <br/>
 
 Tool: R sqlite, MySQL (case study 2 part 3 onwards)
 
