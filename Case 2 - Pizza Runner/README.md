@@ -18,7 +18,7 @@ Danny launched a fresh pizza delivery service and wants to use data to answer th
 5. Bonus DML Challenges (DML = Data Manipulation Language)
 
 ## 2. Entity Relationship Diagram
-![image](https://user-images.githubusercontent.com/38837759/174419343-04428c2d-a739-463a-b0e1-8b0a3d1ef08a.png)
+![image](https://github.com/pinusa/8-Week-SQL-Challenge/blob/main/Case%202%20-%20Pizza%20Runner/Screen%20Shot%202022-06-18%20at%2009.49.50.png)
 
 ## 3. Case Study Questions
 ### 1. Pizza Metrics (view solution [here](https://github.com/pinusa/8-Week-SQL-Challenge/blob/main/Case%202%20-%20Pizza%20Runner/Part%20A%20and%20B%20(in%20sqlite).Rmd))
