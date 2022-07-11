@@ -148,8 +148,39 @@ from join_date_cte j
 JOIN pro_date_cte p
 ON j.customer_id = p.customer_id
 
-/* 10. Can you further breakdown this average value into 30 day periods (i.e. 0-30 days, 31-60 days etc)*/
+/* 10. Can you further breakdown this average value into 30 day periods (i.e. 0-30 days, 31-60 days etc)
+approach: avg(timestampdiff(start_date of plan_id =3 - sd.pid=1)), use case when to bin data in mysql between 0 and 30
+*/
 
+WITH
+annual_cte AS (SELECT customer_id, plan_id, start_date AS start_date_id3 FROM subscriptions WHERE plan_id = 3),
+trial_cte AS (SELECT customer_id, plan_id, start_date AS start_date_id0 FROM subscriptions WHERE plan_id = 0),
+new_df AS (SELECT a.customer_id, t.plan_id AS trial_planid, start_date_id0, a.plan_id, start_date_id3 FROM annual_cte a JOIN trial_cte t on a.customer_id = t.customer_id),
+days_df AS (SELECT timestampdiff(DAY, start_date_id0, start_date_id3) AS days_to_conversion FROM new_df),
+ans_df AS (SELECT *,
+CASE 
+WHEN days_to_conversion <= 30 THEN '0-30'
+WHEN days_to_conversion BETWEEN 31 AND 60 THEN '31-60'
+WHEN days_to_conversion BETWEEN 61 AND 90 THEN '61-90'
+WHEN days_to_conversion BETWEEN 91 AND 120 THEN '91-120'
+WHEN days_to_conversion BETWEEN 121 AND 150 THEN '121-150'
+WHEN days_to_conversion BETWEEN 151 AND 180 THEN '151-180'
+WHEN days_to_conversion BETWEEN 181 AND 210 THEN '181-210'
+WHEN days_to_conversion BETWEEN 211 AND 240 THEN '211-240'
+WHEN days_to_conversion BETWEEN 241 AND 270 THEN '241-270'
+WHEN days_to_conversion BETWEEN 271 AND 300 THEN '271-300'
+WHEN days_to_conversion BETWEEN 301 AND 330 THEN '301-330'
+WHEN days_to_conversion BETWEEN 331 AND 360 THEN '331-360'
+ELSE NULL
+END AS thirty_day_periods
+FROM days_df
+ORDER BY days_to_conversion)
+
+SELECT thirty_day_periods, 
+count(days_to_conversion) AS 'avg. days from trial to pro'
+FROM ans_df 
+GROUP BY thirty_day_periods
+ORDER BY length(thirty_day_periods)
 
 /* 11. How many customers downgraded from a pro monthly to a basic monthly plan in 2020?
 approach: where year(start_date) = 2020, current plan 2 > next plan 1, count distinct customer_id
