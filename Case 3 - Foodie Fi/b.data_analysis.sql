@@ -151,5 +151,22 @@ ON j.customer_id = p.customer_id
 /* 10. Can you further breakdown this average value into 30 day periods (i.e. 0-30 days, 31-60 days etc)*/
 
 
-/* 11. How many customers downgraded from a pro monthly to a basic monthly plan in 2020?*/
+/* 11. How many customers downgraded from a pro monthly to a basic monthly plan in 2020?
+approach: where year(start_date) = 2020, current plan 2 > next plan 1, count distinct customer_id
+*/
 
+WITH next_plan_cte as (
+SELECT 
+s.customer_id,
+p.plan_name,
+p.plan_id,
+LEAD(s.plan_id,1) OVER(PARTITION BY s.customer_id) AS next_plan
+FROM plans p
+JOIN subscriptions s
+ON p.plan_id = s.plan_id
+WHERE year(s.start_date) = 2020
+)
+
+SELECT * 
+FROM next_plan_cte
+WHERE plan_id = 2 AND next_plan = 1
